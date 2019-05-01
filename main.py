@@ -29,22 +29,25 @@ class User:
 
     def block_text(self, text, length=50):
         final_text = ""
-        while len(self.text) >= length:
-            final_text += text[0:length]
+        while len(text) >= length:
+            final_text += text[0:length] + "\n"
+            text = text[length:]
+        return final_text
 
 
 
     def create_event(self, title, date, description, agemin, agemax):
         self.title = title
         self.date = date
-        self.description = description
+        self.description = self.block_text(description)
+        print(self.description)
         self.agemin = agemin
         self.agemax = agemax
 
     def print_event(self):
         print(self.title.center(width))
         print("_"*width)
-        print("\n{0: <30}".format(self.description))
+        print("\n" +self.description)
         print("\nRecommended for ages {} - {}.".format(self.agemin, self.agemax))
 
 
