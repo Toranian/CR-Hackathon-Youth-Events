@@ -4,7 +4,7 @@ port = 5000
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #s.bind((socket.gethostname(), port))
-s.bind(("0.0.0.0", port))
+s.bind(("192.168.43.187", port))
 
 s.listen(5)
 print(socket.gethostname())
