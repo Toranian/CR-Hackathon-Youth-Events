@@ -5,6 +5,7 @@ def clear_screen(wait=0.5):
     time.sleep(wait)
     os.system("cls")
 
+# user accounts
 class User:
 
     """
@@ -12,7 +13,7 @@ class User:
     """
 
     def __init__(self, name=None, username=None, password=None, age=None):
-       
+
         self.width = 50
         self.name = name
         self.username = username
@@ -35,9 +36,9 @@ class User:
         print("_"*self.width)
         print("\n" +self.description)
         print("\nRecommended for ages {} - {}.".format(self.agemin, self.agemax))
-    
-    def save_account(self, user, accounts):
-        pickle.dump
+
+
+# the main control class of the program.
 class Control:
 
     """
@@ -81,13 +82,13 @@ class Control:
                     return user
             else:
                 print("That username is not recorded in our database. If you would like to create an account, type: signup.")
-    
+
 
 # returns the name, username and password after the user creates an account.
 def create_account(accounts):
 
     name = input("\nWhat is your full name?\n: ")
-    
+
     # create the username. Repeat if it is already in the database!
     while True:
         username = input("\nWhat would you like your username to be?\n: ")
@@ -95,9 +96,9 @@ def create_account(accounts):
             if user.username == username:
                 print("That username already exists in our database. Please try again!")
         break
-        
+
     age = input("\nHow old are you?:\n: ")
-    
+
     # make sure the passwords match!
     while True:
         password = input("Create a password:\n:")
@@ -105,7 +106,8 @@ def create_account(accounts):
         if password == confirm:
             print("Account Created successfully!")
             clear_screen()
-            return (name, username, password, age)
+            return name, username, password, age
 
 
-
+def create_event(events):
+    pass

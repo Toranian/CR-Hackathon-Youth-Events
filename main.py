@@ -23,16 +23,21 @@ if __name__ == "__main__":
         accounts = [
             User("Isaac Morrow", "Toranian", "dragon"),
             User("Ethan Posner", "Enpro", "bigbad"),
-            User("Nick Something", "Tselenium", "bigcool"),
+            User("Nick Hopkins", "Tselenium", "bigcool"),
         ]
         pickle.dump(accounts, open("accounts.txt", "wb"))
         print(accounts)
+        events = []
+
 
 # Initialize the control class which has most of the functions within it.
 control = Control(accounts)
-command_list = ["login", "signup", "home", "quit", "events", "userstats"]
+command_list = ["login", "signup", "home", "quit", "events", "userstats", "createevent"]
+
+# starts the mainloop
 loop = True
 
+# asks if the user has any accounts
 has_account = control.yesno("Do you have an account?\n: ")
 
 if has_account:
@@ -49,24 +54,23 @@ if not has_account:
         print("NO ERRORS!")
 
 
-
 # Main loop of the whole program! Will let the user select what they want.
 while loop:
-    
+
     # Get the command from the user
     command = input("\nWhat would you like to do? Type (h)elp for a list of commands.\n: ").lower().strip()
 
     if command not in command_list:
         print("Command not recognized. Try typing (h)elp for a list of commands.\n")
         clear_screen()
-    
+
     if "q" in command:
         print("Exiting the program!")
         quit()
 
     if "userstats" in command:
         active_user.print_stats()
-    
+
     if "help" in command:
         for cmd in command_list:
             print(cmd)
