@@ -11,7 +11,7 @@ if __name__ == "__main__":
         print("\n\n\n\n")
         print("_"*50)
         print(">>> Loaded accounts successfully!\n")
-
+        print(accounts)
         for user in accounts:
             print(user.username)
         # print("accounts:", accounts)
@@ -72,6 +72,4 @@ while loop:
             print(cmd)
 
     if "createevent" in command:
-        
-
-
+        pass

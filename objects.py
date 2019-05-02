@@ -38,8 +38,6 @@ class User:
     
     def save_account(self, user, accounts):
         pickle.dump
-
-
 class Control:
 
     """
