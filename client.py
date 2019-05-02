@@ -1,6 +1,6 @@
 import socket
 
-hostname = "0.0.0.0"
+hostname = "192.168.43.187"
 port = 5000
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
