@@ -1,9 +1,10 @@
 import socket
 
-hostname = "tbl-hackerspace-24-s"
+hostname = "0.0.0.0"
+port = 5000
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((hostname, 1234))
+s.connect((hostname, port))
 
 msg = s.recv(1024)
 
