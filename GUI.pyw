@@ -47,6 +47,9 @@ def register():
     password = registerpasswordbox.get()
     confirmpassword = confirmpasswordbox.get()
 
+    registermessagelabel.config(fg="grey25")
+
+
     changetomainframe()
 
 def showevents():

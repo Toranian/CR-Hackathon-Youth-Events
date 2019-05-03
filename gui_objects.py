@@ -113,7 +113,7 @@ class Control:
             for user in self.accounts:
                 if user.username == username:
                     print("That username already exists in our database. Please try again!")
-            break
+                    return False
 
         age = input("\nHow old are you?:\n: ")
 
