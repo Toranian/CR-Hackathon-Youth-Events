@@ -3,12 +3,12 @@ import pickle
 
 root = tk.Tk()
 root.title("Campbell Rivents")
-root.configure(bg = "grey70")
+root.configure(bg = "grey25")
 root.geometry("600x400")
 
 main_frame = tk.Frame(root)
 
-eventsLabel = tk.Label(root, text="test", fg="black", bg="grey70")
+eventsLabel = tk.Label(root, text="test", fg="black", bg="grey25")
 eventsLabel.place(relx=.5, rely=.6, anchor="center")
 
 main_frame.tkraise()
