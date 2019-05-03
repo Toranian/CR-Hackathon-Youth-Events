@@ -25,7 +25,8 @@ body {
 
 
 #navbar-containing-list {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: #009688; */
   position: fixed;
   top: 0;
   left: 0;
@@ -33,6 +34,7 @@ body {
   list-style-type: none;
   box-shadow: 5px 0px #888888;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 li, .pointer {
@@ -198,3 +200,18 @@ td {
 /* footer {
   text-align: center;
 } */
+
+#logo {
+  background-image: url("../img/bad_logo_god_what_is_wrong_with_me.png");
+  top: 20%;
+  right: 10%;
+  bottom: 0;
+  margin: auto;
+  width: 60vh;
+  height: 60vh;
+  position: absolute;
+  /* border: 2px solid red; */
+  background-size: cover;
+
+
+}

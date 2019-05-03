@@ -14,13 +14,17 @@
 
         <!-- navigation bar -->
         <nav>
-            <ul id="navbar-containing-list">
-                <li class=".pointer" onclick="scrollTo('#home')"><a href="">Home</a> </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <!-- <li style="float: right; margin-right: 15px;" onclick="newsToggle()"><a href="">News Letter</a></li> -->
-            </ul>
+          <ul id="navbar-containing-list">
+            <li class=".pointer" ><a href="homepage.html">Home</a> </li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="homepage.html#about-us">About</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
         </nav>
+
+        <!-- Sexy Logo  -->
+        <div id="logo"></div>
 
         <!-- background image -->
         <div id="background-image-left" onclick="func()">
@@ -80,6 +84,18 @@
               as the time/place/description of
               the event.
             </p>
+
+            <br>
+            <hr style="width: 100%">
+            <br>
+            <h1 align="center" id="about-us">Who are we?</h1>
+            <p>
+            We are a programming group based in Campbell River, British Columbia (shocker). We noticed that, as teens,
+            there was not much to do in Campbell River. However, after thinking and brainstorming, we developed what is now known
+            as "Campbell Rivents". We want our services to help make Campbell River a more youth friendly city, as well as letting teens have fun!
+            Our idea is not to create events, but to create a platform for users to create their own.
+
+            </p>
       </div>
     </section>
 
@@ -102,6 +118,15 @@
         </a>
       </div>
 
+
+      <div class="w3-quarter">
+        <img src="http://d3ofp6qdaruccr.cloudfront.net/uploads/Camping-with-Teens.jpg" alt="Lore Ipsum" style="max-width: 150px; max-height:100px;">
+        <h3>Weekend Campout</h3>
+        <p>Come on down to the sportsplex and for our weekend long campout. Sign up on the Campbell Rivents
+        app and have a blast over the weekend. We will be roasting marshmellows, hotdogs, burgers, and making s'mores.</p>
+      </div>
+
+
     </aside>
 
   </main>
@@ -111,8 +136,9 @@
 </body>
 
 <!-- Add to all -->
-<!-- <footer>
+<footer align="center">
+  <br><br>
    Copyright © Monty Python's Brainy Binary Boiz
-</footer> -->
+</footer>
 
 </html>
