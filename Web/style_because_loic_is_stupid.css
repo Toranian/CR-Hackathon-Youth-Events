@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', "Lato", sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
+}
+li, .pointer {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  transition-duration: 0.5s;
+}
+
+li a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 45px;
+  margin: 10px;
+}
+
+.content {
+
+  /* margin: 0 auto; */
+  /* border: 1px solid red; */
+
+  font-family: "Lato", sans-serif;
+  padding: 5px;
+  /* align-items: center; */
+  text-align: left;
+  font-size: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 10%;
+}
+
+.header #list {
+  /* border: 1px solid red; */
+  font-family: "Lato", sans-serif;
+  /* align-items: center; */
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: -15px;
+  opacity: 0.9;
+  
+  /* border: 2px solid red; */
+}
+
+#home {
+  /* border: 1px solid red; */
+  font-family: "Lato", sans-serif;
+  /* align-items: center; */
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 10px;
+  opacity: 0.9;
+  
+  /* border: 2px solid red; */
+}
+
+#events {
+  /* border: 1px solid red; */
+  font-family: "Lato", sans-serif;
+  /* align-items: center; */
+  text-align: left;
+  font-size: 20px;
+  width: 50%;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 10px;
+  opacity: 0.9;
+  
+  /* border: 2px solid red; */
+}
+
+
+#newsletter {
+  width: 500px;
+  background-color: white;
+  box-shadow: 5px 10px #888888;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  top: 50%;
+  right: 50%;
+  display: none;
+  left: -1000px;
+}
+
+
+#background-image-left {
+  z-index: -100;
+  /* max-height: 100%; */
+  max-width: 100%;
+  background-image: url("/campbell_river.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  left: 0;
+}
+
+
+
+#content-left {
+
+  position: left top;
+  left: 5%;
+  top: 50%;
+  /* bottom: 0; */
+  /* margin: auto; */
+  /* background */
+  width: 500px;
+}
+
+/*#circle-image {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 60vh;
+  height: 60vh;
+  right: 20%;
+  border-radius: 50%;
+  border: 4px solid red;  
+  background-image: url("../img/teenagers.jpg");
+  overflow: hidden;
+  background-size: cover;
+  
+
+} */
+
+
+.title {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 25px 30px;
+  border-radius: 8px;
+  color: white;
+  margin-top: -23px;
+}
+
+.border {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 2px;
+}
+
+.table-image {
+  width: 240px;
+  height: 240px;
+  z-index: -3;
+  color: white;
+  background-image: url("../img/original_image.jpg")
+}
+
+td {
+  font-size: 10px;
+  color: white;
+}
+
+.heading h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}

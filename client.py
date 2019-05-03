@@ -1,4 +1,5 @@
 import socket
+from objects import *
 
 hostname = "Hackathon5"
 port = 5000
