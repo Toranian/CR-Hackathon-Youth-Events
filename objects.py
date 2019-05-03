@@ -30,15 +30,13 @@ class User:
         self.agemin = agemin
         self.agemax = agemax
 
-    def print_event(self):
-        print(self.title.center(self.width))
-        print("_"*self.width)
-        print("\n" +self.description)
-        print("\nRecommended for ages {} - {}.".format(self.agemin, self.agemax))
-
 
 # Event objects.
 class Event:
+
+    """
+    Handles the events and displays them as well into objects.
+    """
 
     def __init__(self, title, description, time, location, created_by):
         self.title = title
@@ -48,7 +46,21 @@ class Event:
         self.created_by = created_by
 
     def display(self):
-        print("Event display")
+
+        bottom_text = f"\nDate: {self.time}, Location: {self.location}, Event created by {self.created_by}"
+
+        if len(self.description) > len(bottom_text):
+            length = len(self.description)
+        else:
+            length = len(bottom_text)
+
+        print("_" * length)
+        print(self.title.center(length))
+        print("_" * length)
+        print("")
+        print(self.description)
+        print(bottom_text)
+
 
 
 # The main control handler class of the program
@@ -70,11 +82,9 @@ class Control:
             # answer = input("{}".format(message)).lower()
             if "y" in answer:
                 return True
-                break
 
             if "n" in answer:
                 return False
-                break
 
             else:
                 print("Incorrect format entered. Try typing 'yes' or 'no'. Or, 'y' or 'n' for short.")
@@ -121,7 +131,6 @@ class Control:
     def clear_screen(self, wait=0.5):
         time.sleep(wait)
         os.system("cls")
-        pass
         # os.system("clear")
 
     # Output message
@@ -132,6 +141,7 @@ class Control:
         print("_"*len(message))
         print("\n")
 
+    # Writes a message and takes input. Returns the input
     def input_message(self, message):
         return input("{}\n-> ".format(message))
 
@@ -141,7 +151,7 @@ class Control:
         # description = input("What would you like the description of your event to be?\n: ")
         title = self.input_message("What would you like the title of your event to be?")
         description = self.input_message("What would you like the description of your event to be?")
-        time = self.input_message("What time would you like the event to be at?")
+        time = self.input_message("What is the time and date of this event?")
         location = self.input_message("Where is this event being held (location)?")
         created_by = active_user.username
 

@@ -16,24 +16,24 @@ if __name__ == "__main__":
         print("\n\n\n\n")
         print("_"*50)
         print(">>> Loaded accounts successfully!\n")
-        print(accounts)
         for user in accounts:
-            print(user)
-        print(">>> Loaded events successfully!")
+            print(user.username)
+        print("\n>>> Loaded events successfully!")
         for event in events:
             print(event.title)
         print("_"*50)
         print("\n\n\n\n")
 
+
     except:
         print("Failed. Creating a new accounts list!")
-        accounts = [
-            User("Isaac Morrow", "Toranian", "dragon"),
-            User("Ethan Posner", "Enpro", "bigbad"),
-            User("Nick Hopkins", "Tselenium", "bigcool"),
-        ]
-        pickle.dump(accounts, open("accounts.txt", "wb"))
-        print(accounts)
+        # accounts = [
+        #     User("Isaac Morrow", "Toranian", "dragon"),
+        #     User("Ethan Posner", "Enpro", "bigbad"),
+        #     User("Nick Hopkins", "Tselenium", "bigcool"),
+        # ]
+        # pickle.dump(accounts, open("accounts.txt", "wb"))
+        # print(accounts)
         events = []
         pickle.dump(events, open("events.txt", "wb"))
 
@@ -116,3 +116,8 @@ while loop:
          events.append(new_event)
          print(events)
          pickle.dump(events, open("events.txt", "wb"))
+
+    if "events" in command or "viewevents" in command:
+        for event in events:
+            event.display()
+            print("\n\n\n")
