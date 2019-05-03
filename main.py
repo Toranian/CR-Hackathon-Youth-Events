@@ -14,8 +14,9 @@ if __name__ == "__main__":
         print("\n\n\n\n")
         print("_"*50)
         print(">>> Loaded accounts successfully!\n")
+        print(accounts)
         for user in accounts:
-            print(user.username)
+            print(user)
         print(">>> Loaded events successfully!")
         for event in events:
             print(event.title)
@@ -31,7 +32,7 @@ if __name__ == "__main__":
         ]
         pickle.dump(accounts, open("accounts.txt", "wb"))
         print(accounts)
-        events = ["Test"]
+        events = []
         pickle.dump(events, open("events.txt", "wb"))
 
 
@@ -71,7 +72,6 @@ while loop:
     # Get the command from the user
     control.output_message("What would you like to do? Type (h)elp for a list of commands.")
     command = control.input_message(" ").lower().replace(" ", "")
-    print(command)
 
     if command == "":
         continue
