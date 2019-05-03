@@ -11,5 +11,5 @@ print(socket.gethostname())
 
 while True:
     clientsocket, address = s.accept()
-    print("connection from {address} has been done")
+    print("connection from {address} has been done with {clientsocket}")
     clientsocket.send(bytes("welcome to server", "utf-8"))
