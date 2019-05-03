@@ -114,7 +114,7 @@ class Control:
             confirm = input("Confirm your password:\n:")
             if password == confirm:
                 print("Account Created successfully!")
-                self.clear_screen(
+                self.clear_screen()
                 return name, username, password, age
 
     # clears the screen after a certain amount of time. Default value is 0.5 seconds.

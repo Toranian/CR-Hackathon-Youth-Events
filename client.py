@@ -8,4 +8,5 @@ s.connect((hostname, port))
 
 msg = s.recv(1024)
 
-print(msg.decode("utf-8"))
+while True:
+    print(msg.decode("utf-8"))
