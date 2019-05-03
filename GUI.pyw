@@ -49,6 +49,10 @@ def register():
 
     changetomainframe()
 
+def showevents():
+    for event in events:
+        eventslabel.config(text = "{}\u2022{}: {}\n\n".format(eventslabel.cget("text"), event.title, event.description))
+
 active_user = ""
 
 if __name__ == "__main__":
@@ -77,8 +81,12 @@ root.geometry("600x400")
 #frame for main menu
 main_frame = tk.Frame(root, width=600, height=400, bg="grey25")
 
-eventsLabel = tk.Label(main_frame, text="Campbell Rivents", fg="white", bg="grey25", font = ('consolas', 20, 'bold'))
-eventsLabel.place(relx=.5, rely=.1, anchor="n")
+maintitleLabel = tk.Label(main_frame, text="Campbell Rivents", fg="white", bg="grey25", font = ('consolas', 20, 'bold'))
+maintitleLabel.place(relx=.5, rely=.1, anchor="n")
+
+eventslabel = tk.Label(main_frame, fg="white", bg="grey25", font = ('consolas', 15, 'bold'), justify="left", wraplength="400")
+eventslabel.place(relx=.1, rely=.5, anchor="w")
+showevents()
 
 main_frame.pack()
 main_frame.pack_forget()
@@ -117,6 +125,9 @@ login_frame.pack_forget()
 
 register_frame = tk.Frame(root, bg="grey25", width=600, height=400)
 
+registermessagelabel = tk.Label(register_frame, text="User Already Exists", bg="grey25", fg="grey25")
+registermessagelabel.place(relx=.5, rely=.05, anchor="center")
+
 register_label = tk.Label(register_frame, text = "REGISTER", fg = "white", bg = "grey25", font = ('consolas', 50, 'bold'))
 register_label.place(relx=.5, rely=.2, anchor="center")
 
@@ -151,8 +162,8 @@ registerbutton.place(relx=.45, rely=.95, anchor="center")
 changetologinbutton = tk.Button(register_frame, text="login", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=changetologinframe)
 changetologinbutton.place(relx=.55, rely=.95, anchor="center")
 
-main_frame.pack()
+register_frame.pack()
 
-main_frame.tkraise()
+register_frame.tkraise()
 
 root.mainloop()
