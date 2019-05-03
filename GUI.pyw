@@ -1,3 +1,4 @@
+import gui_objects as objects
 import tkinter as tk
 import pickle
 
@@ -24,18 +25,49 @@ def changetoregisterframe():
 
 
 def login():
+    print("trying to log you in")
+    global active_user
 
     username = usernamebox.get()
     password = passwordbox.get()
+    loginmessagelabel.config(fg="grey25")
+    active_user = control.login(username, password)
 
+    if active_user != False:
+        changetomainframe()
+    else:
+        print("login failed")
+        loginmessagelabel.config(fg = "white")
 
 def register():
 
     full_name = fullnamebox.get()
     username = registerusernamebox.get()
+    age = ageBox.get()
     password = registerpasswordbox.get()
-    print(full_name, username, password)
+    confirmpassword = confirmpasswordbox.get()
 
+    changetomainframe()
+
+active_user = ""
+
+if __name__ == "__main__":
+
+    try:
+        accounts = pickle.load(open("accounts.txt", "rb"))
+        events = pickle.load(open("events.txt", "rb"))
+        for user in accounts:
+            print(user.username)
+        for event in events:
+            print(event.title)
+
+
+    except:
+        print("Failed. Creating a new accounts list!")
+        events = []
+        pickle.dump(events, open("events.txt", "wb"))
+
+control = objects.Control(accounts)
 
 root = tk.Tk()
 root.title("Campbell Rivents")
@@ -43,14 +75,20 @@ root.configure(bg = "grey25")
 root.geometry("600x400")
 
 #frame for main menu
-main_frame = tk.Frame(root)
+main_frame = tk.Frame(root, width=600, height=400, bg="grey25")
 
-eventsLabel = tk.Label(main_frame, text="test", fg="white", bg="grey25", font = ('consolas', 10, 'bold'))
-eventsLabel.place(relx=.5, rely=.6, anchor="center")
+eventsLabel = tk.Label(main_frame, text="Campbell Rivents", fg="white", bg="grey25", font = ('consolas', 20, 'bold'))
+eventsLabel.place(relx=.5, rely=.1, anchor="n")
+
+main_frame.pack()
+main_frame.pack_forget()
 
 #frame for login screen
 login_frame = tk.Frame(root, bg="grey25", width=600, height=400)
 #login_frame.grid_propagate(False)
+
+loginmessagelabel = tk.Label(login_frame, text = "Login Failed", fg = "grey25", bg = "grey25", font = ('consolas', 10, 'bold'))
+loginmessagelabel.place(relx=.5, rely=.2, anchor="center")
 
 login_label = tk.Label(login_frame, text = "LOGIN", fg = "white", bg = "grey25", font = ('consolas', 50, 'bold'))
 login_label.place(relx=.5, rely=.4, anchor="center")
@@ -113,37 +151,8 @@ registerbutton.place(relx=.45, rely=.95, anchor="center")
 changetologinbutton = tk.Button(register_frame, text="login", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=changetologinframe)
 changetologinbutton.place(relx=.55, rely=.95, anchor="center")
 
-register_frame.pack()
+main_frame.pack()
 
-register_frame.tkraise()
-
-if __name__ == "__main__":
-
-    try:
-        accounts = pickle.load(open("accounts.txt", "rb"))
-        events = pickle.load(open("events.txt", "rb"))
-        print("\n\n\n\n")
-        print("_"*50)
-        print(">>> Loaded accounts successfully!\n")
-        for user in accounts:
-            print(user.username)
-        print("\n>>> Loaded events successfully!")
-        for event in events:
-            print(event.title)
-        print("_"*50)
-        print("\n\n\n\n")
-
-
-    except:
-        print("Failed. Creating a new accounts list!")
-        # accounts = [
-        #     User("Isaac Morrow", "Toranian", "dragon"),
-        #     User("Ethan Posner", "Enpro", "bigbad"),
-        #     User("Nick Hopkins", "Tselenium", "bigcool"),
-        # ]
-        # pickle.dump(accounts, open("accounts.txt", "wb"))
-        # print(accounts)
-        events = []
-        pickle.dump(events, open("events.txt", "wb"))
+main_frame.tkraise()
 
 root.mainloop()

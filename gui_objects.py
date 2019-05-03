@@ -90,9 +90,7 @@ class Control:
                 print("Incorrect format entered. Try typing 'yes' or 'no'. Or, 'y' or 'n' for short.")
 
     # Logs the user in. Checks the database to see if the username and password match the records.
-    def login(self):
-        username = input("Username: ")
-        password = input("Password: ")
+    def login(self, username, password):
 
         for user in self.accounts:
             if username == user.username:
@@ -102,6 +100,7 @@ class Control:
                     return user
             else:
                 print("That username is not recorded in our database. If you would like to create an account, type: signup.")
+                return False
 
     # returns the name, username and password after the user creates an account.
     def create_account(self):
