@@ -25,7 +25,8 @@ body {
 
 
 #navbar-containing-list {
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  background-color: #37474f;
   position: fixed;
   top: 0;
   left: 0;
@@ -33,6 +34,7 @@ body {
   list-style-type: none;
   box-shadow: 5px 0px #888888;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 li, .pointer {
@@ -56,7 +58,7 @@ h1 {
   margin: 10px;
 }
 
-#background-image {
+#background-image, body {
   z-index: -100;
   /* max-height: 100%; */
   max-width: 100%;
@@ -74,15 +76,16 @@ h1 {
   position: absolute;
   top: 10px;
   left: 0;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 .w3-quarter {
-  border-radius: 8px;
-  border: 2px solid red;
+  /* border-radius: 8px; */
+  /* border: 2px solid red; */
   color: white;
-  margin-right: 1px;
-  
+  /* margin-right: 1px; */
+
 }
 
 .w3-quarter p {
