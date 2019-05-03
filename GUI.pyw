@@ -1,22 +1,41 @@
 import tkinter as tk
 import pickle
 
+
+def changetomainframe():
+    main_frame.tkraise()
+    main_frame.pack()
+    login_frame.pack_forget()
+    register_frame.pack_forget()
+
+
 def changetologinframe():
     login_frame.tkraise()
     login_frame.pack()
     register_frame.pack_forget()
+    main_frame.pack_forget()
+
 
 def changetoregisterframe():
-    print("changing to register frame")
     register_frame.tkraise()
     register_frame.pack()
     login_frame.pack_forget()
+    main_frame.pack_forget()
+
 
 def login():
-    pass
+
+    username = usernamebox.get()
+    password = passwordbox.get()
+
 
 def register():
-    pass
+
+    full_name = fullnamebox.get()
+    username = registerusernamebox.get()
+    password = registerpasswordbox.get()
+    print(full_name, username, password)
+
 
 root = tk.Tk()
 root.title("Campbell Rivents")
@@ -35,16 +54,20 @@ login_frame = tk.Frame(root, bg="grey25", width=600, height=400)
 
 login_label = tk.Label(login_frame, text = "LOGIN", fg = "white", bg = "grey25", font = ('consolas', 50, 'bold'))
 login_label.place(relx=.5, rely=.4, anchor="center")
+
 usernamelabel = tk.Label(login_frame, text="Username", font = ('consolas', 10, 'bold'), bg="grey25", fg="white")
 usernamelabel.place(relx=.5, rely=.55, anchor="center")
 usernamebox = tk.Entry(login_frame, width="20")
 usernamebox.place(relx=.5, rely=.6, anchor="center")
+
 passwordlabel = tk.Label(login_frame, text="Password", font = ('consolas', 10, 'bold'), bg="grey25", fg="white")
 passwordlabel.place(relx=.5, rely=.75, anchor="center")
 passwordbox = tk.Entry(login_frame, width="20")
 passwordbox.place(relx=.5, rely=.8, anchor="center")
+
 changetoregisterbutton = tk.Button(login_frame, text="register", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=changetoregisterframe)
 changetoregisterbutton.place(relx=.45, rely=.9, anchor="center")
+
 loginbutton = tk.Button(login_frame, text="login", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=login)
 loginbutton.place(relx=.55, rely=.9, anchor="center")
 
@@ -78,12 +101,15 @@ registerpasswordlabel = tk.Label(register_frame, text="Password", font = ('conso
 registerpasswordlabel.place(relx=.5, rely=.7, anchor="center")
 registerpasswordbox = tk.Entry(register_frame)
 registerpasswordbox.place(relx=.5, rely=.75, anchor="center")
+
 confirmpasswordlabel = tk.Label(register_frame, text="Confirm Password", font = ('consolas', 10, 'bold'), bg="grey25", fg="white")
 confirmpasswordlabel.place(relx=.5, rely=.8, anchor="center")
 confirmpasswordbox = tk.Entry(register_frame, width="20")
 confirmpasswordbox.place(relx=.5, rely=.85, anchor="center")
+
 registerbutton = tk.Button(register_frame, text="register", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=register)
 registerbutton.place(relx=.45, rely=.95, anchor="center")
+
 changetologinbutton = tk.Button(register_frame, text="login", font = ('consolas', 10, 'bold'), bg="white", fg="black", command=changetologinframe)
 changetologinbutton.place(relx=.55, rely=.95, anchor="center")
 
